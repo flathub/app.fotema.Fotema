@@ -15,7 +15,8 @@
     "--socket=fallback-x11",
     "--socket=pulseaudio",
     "--filesystem=xdg-pictures:ro",
-    "--env=RUST_BACKTRACE=1"
+    "--env=RUST_BACKTRACE=0",
+    "--env=RUST_LOG=fotema=warn,relm4=warn,glycin=warn"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin"
@@ -198,8 +199,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/blissd/fotema/releases/download/v1.0.0/fotema-1.0.0.tar.xz",
-          "sha256": "e3bb88c8f0d3c3f3e0002d7fc2ca353ee77ae437dd5684e5228c24b84ff113e1"
+          "url": "https://github.com/blissd/fotema/releases/download/v1.0.1/fotema-1.0.1.tar.xz",
+          "sha256": "f1b11935e613e149160cafc7fdebb4d74e14fb16136ba1c320c634bbb4364e69"
         }
       ]
     }
