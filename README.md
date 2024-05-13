@@ -1,6 +1,6 @@
 # Fotema for Flathub
 
-To test locally install (just)[https://github.com/casey/just] and Flatpak Builder.
+To test locally install [just](https://github.com/casey/just) and Flatpak Builder.
 
 Run:
 
