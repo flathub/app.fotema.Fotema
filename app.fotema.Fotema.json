@@ -199,7 +199,7 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/blissd/fotema/releases/download/v1.7.0/fotema-1.7.0.tar.xz",
+          "url": "https://github.com/blissd/fotema/releases/download/v1.7.1/fotema-1.7.1.tar.xz",
           "sha256": "01c5d8af314871c2fa13532a687167549a40b4f993e3d22e6c3d7b695e938baa"
         }
       ]
