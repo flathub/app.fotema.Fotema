@@ -199,8 +199,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/blissd/fotema/releases/download/v1.8.3/fotema-1.8.3.tar.xz",
-          "sha256": "1f809a859ad35b5c04de45c5936676355368b06d51effa75e86df72b361eced4"
+          "url": "https://github.com/blissd/fotema/releases/download/v1.8.4/fotema-1.8.4.tar.xz",
+          "sha256": "ead22407495860bdbb3b16ec744b73e61facac3a295802a93fe66052e6fb01de"
         }
       ]
     }
