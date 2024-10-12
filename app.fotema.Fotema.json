@@ -64,14 +64,15 @@
         }
       },
       "config-opts": [
-        "-Dprofile=default"
+        "-Dprofile=default",
+        "-Dsandboxed=true"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/blissd/fotema.git",
           "tag": "v1.15.0",
-          "commit": "1da03f8d3139df062c691db63c87ddee1636fa80"
+          "commit": "9a76674d4c2071f54667270de6a0c0d3389c0442"
         },
         "cargo-sources.json"
       ]
