@@ -1,7 +1,7 @@
 {
   "id": "app.fotema.Fotema",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "46",
+  "runtime-version": "47",
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable",
@@ -68,8 +68,9 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/blissd/fotema/releases/download/v1.14.4/fotema-1.14.4.tar.xz",
-          "sha256": "49b0ff4d2c1c1baf9828ce0b5ed3a650d73bf9a685898040435fcc4f295cecb5"
+          "url": "https://github.com/blissd/fotema.git",
+          "tag": "v1.15.0",
+          "commit": "1da03f8d3139df062c691db63c87ddee1636fa80"
         }
       ]
     }
