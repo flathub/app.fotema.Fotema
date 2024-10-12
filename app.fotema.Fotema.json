@@ -52,6 +52,7 @@
     {
       "name": "fotema",
       "buildsystem": "meson",
+      "builddir": true,
       "run-tests": false,
       "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
@@ -67,7 +68,7 @@
       ],
       "sources": [
         {
-          "type": "archive",
+          "type": "git",
           "url": "https://github.com/blissd/fotema.git",
           "tag": "v1.15.0",
           "commit": "1da03f8d3139df062c691db63c87ddee1636fa80"
