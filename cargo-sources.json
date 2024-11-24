@@ -4194,14 +4194,14 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/portable-atomic/portable-atomic-1.9.0.crate",
-        "sha256": "cc9c68a3f6da06753e9335d63e27f6b9754dd1920d941135b7ea8224f141adb2",
-        "dest": "cargo/vendor/portable-atomic-1.9.0"
+        "url": "https://static.crates.io/crates/portable-atomic/portable-atomic-1.10.0.crate",
+        "sha256": "280dc24453071f1b63954171985a0b0d30058d287960968b9b2aca264c8d4ee6",
+        "dest": "cargo/vendor/portable-atomic-1.10.0"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"cc9c68a3f6da06753e9335d63e27f6b9754dd1920d941135b7ea8224f141adb2\", \"files\": {}}",
-        "dest": "cargo/vendor/portable-atomic-1.9.0",
+        "contents": "{\"package\": \"280dc24453071f1b63954171985a0b0d30058d287960968b9b2aca264c8d4ee6\", \"files\": {}}",
+        "dest": "cargo/vendor/portable-atomic-1.10.0",
         "dest-filename": ".cargo-checksum.json"
     },
     {
