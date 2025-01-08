@@ -5,7 +5,7 @@
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable",
-    "org.freedesktop.Sdk.Extension.llvm18"
+    "org.freedesktop.Sdk.Extension.llvm19"
   ],
   "command": "fotema",
   "finish-args": [
@@ -19,8 +19,8 @@
     "--env=RUST_LOG=fotema=warn,relm4=warn,glycin=warn"
   ],
   "build-options": {
-    "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
-    "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
+    "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm19/bin",
+    "prepend-ld-library-path": "/usr/lib/sdk/llvm19/lib"
   },
     "cleanup": [
         "/include",
@@ -55,11 +55,11 @@
       "builddir": true,
       "run-tests": false,
       "build-options": {
-        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib",
+        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm19/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm19/lib",
         "env": {
             "OPENCV_INCLUDE_PATHS": "/app/include/opencv4",
-            "LIBCLANG_PATH": "/usr/lib/sdk/llvm18/lib",
+            "LIBCLANG_PATH": "/usr/lib/sdk/llvm19/lib",
             "ORT_STRATEGY": "system"
         }
       },
@@ -71,8 +71,8 @@
         {
           "type": "git",
           "url": "https://github.com/blissd/fotema.git",
-          "tag": "v1.18.3",
-          "commit": "e8e934eb20987cb4b38154aef4aac0f51812d42a"
+          "tag": "v1.19.0",
+          "commit": "6d468a3db7c56e88605afc0888f87105c039b72d"
         },
         "cargo-sources.json"
       ]
