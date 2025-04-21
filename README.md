@@ -11,6 +11,6 @@ To test locally install [just](https://github.com/casey/just) and Flatpak Builde
 Run:
 
 ```shell
-export JUSTFILE=flatpak.justfile
+export JUST_JUSTFILE=flatpak.justfile
 just flathub
 ```
