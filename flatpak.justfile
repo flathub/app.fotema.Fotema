@@ -2,10 +2,13 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+[private]
+default:
+    just --list --justfile {{ justfile() }}
+
 # Locally test flatpak build for flathub
-flathub:
+build:
     flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest app.fotema.Fotema.json
     flatpak run org.flatpak.Builder \
         --force-clean \
         --sandbox \
@@ -17,5 +20,6 @@ flathub:
         --repo=repo \
         builddir \
         app.fotema.Fotema.json
-    flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo
 
+run:
+    flatpak run --branch=master app.fotema.Fotema
