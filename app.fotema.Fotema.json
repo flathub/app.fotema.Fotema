@@ -3,10 +3,7 @@
   "runtime": "org.gnome.Platform",
   "runtime-version": "48",
   "sdk": "org.gnome.Sdk",
-  "sdk-extensions": [
-    "org.freedesktop.Sdk.Extension.rust-stable",
-    "org.freedesktop.Sdk.Extension.llvm20"
-  ],
+  "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable", "org.freedesktop.Sdk.Extension.llvm20"],
   "command": "fotema",
   "finish-args": [
     "--device=dri",
@@ -16,36 +13,40 @@
     "--socket=fallback-x11",
     "--socket=pulseaudio",
     "--env=RUST_BACKTRACE=0",
-    "--env=RUST_LOG=fotema=warn,fotema_core::thumbnailify=error,relm4=warn,glycin=warn"
+    "--env=RUST_LOG=fotema=info,fotema_core::thumbnailify=warn,relm4=warn,glycin=warn"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin",
     "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
   },
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/lib/cmake",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
-
-    "add-extensions": {
-        "app.fotema.Fotema.HEIC": {
-            "directory": "lib/libheif-heic",
-            "add-ld-path": "lib",
-            "bundle": true,
-            "autodelete": true
-        }
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/lib/cmake",
+    "/share/doc",
+    "/share/gtk-doc",
+    "/share/man",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
+  "cleanup-commands": ["mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"],
+  "add-extensions": {
+    "app.fotema.Fotema.HEIC": {
+      "directory": "lib/libheif-heic",
+      "add-ld-path": "lib",
+      "bundle": true,
+      "autodelete": true
     },
+    "org.freedesktop.Platform.ffmpeg-full": {
+      "version": "24.08",
+      "directory": "lib/ffmpeg",
+      "add-ld-path": "."
+    }
+  },
 
   "modules": [
     "modules/glycin-loaders.json",
-    "modules/ffmpeg.json",
     "modules/libshumate.json",
     "modules/opencv.json",
     "modules/libonnxruntime.json",
@@ -58,21 +59,18 @@
         "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin",
         "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib",
         "env": {
-            "OPENCV_INCLUDE_PATHS": "/app/include/opencv4",
-            "LIBCLANG_PATH": "/usr/lib/sdk/llvm20/lib",
-            "ORT_STRATEGY": "system"
+          "OPENCV_INCLUDE_PATHS": "/app/include/opencv4",
+          "LIBCLANG_PATH": "/usr/lib/sdk/llvm20/lib",
+          "ORT_STRATEGY": "system"
         }
       },
-      "config-opts": [
-        "-Dprofile=default",
-        "-Dsandboxed=true"
-      ],
+      "config-opts": ["-Dprofile=default", "-Dsandboxed=true"],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/blissd/fotema.git",
-          "tag": "2.0.0",
-          "commit": "448d26904a806c116e3d117a95c2abd37683dd92"
+          "tag": "v2.0.0",
+          "commit": "cba2cd5937ca9fc146483470429c2880338dc8bf"
         },
         "cargo-sources.json"
       ]
