@@ -69,8 +69,8 @@
         {
           "type": "git",
           "url": "https://github.com/blissd/fotema.git",
-          "tag": "v2.0.0",
-          "commit": "792eda1c87bb2d69a8a1a3bfbb442bf142c2dde5"
+          "tag": "v2.0.1",
+          "commit": "0841b51df63e59bf85c74368c55f47464d46760f"
         },
         "cargo-sources.json"
       ]
