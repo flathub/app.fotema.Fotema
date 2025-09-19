@@ -32,12 +32,6 @@
   ],
   "cleanup-commands": ["mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"],
   "add-extensions": {
-    "app.fotema.Fotema.HEIC": {
-      "directory": "lib/libheif-heic",
-      "add-ld-path": "lib",
-      "bundle": true,
-      "autodelete": true
-    },
     "org.freedesktop.Platform.ffmpeg-full": {
       "version": "24.08",
       "directory": "lib/ffmpeg",
