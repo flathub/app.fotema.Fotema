@@ -46,7 +46,6 @@
   },
 
   "modules": [
-    "modules/glycin-loaders.json",
     "modules/libshumate.json",
     "modules/opencv.json",
     "modules/libonnxruntime.json",
