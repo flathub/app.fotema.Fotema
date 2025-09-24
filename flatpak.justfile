@@ -23,3 +23,6 @@ build:
 
 run:
     flatpak run --branch=master app.fotema.Fotema
+
+clean:
+    rm -rf .flatpak-builder builddir repo

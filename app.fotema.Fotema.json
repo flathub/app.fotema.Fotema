@@ -1,79 +1,72 @@
 {
-  "id": "app.fotema.Fotema",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "48",
-  "sdk": "org.gnome.Sdk",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable", "org.freedesktop.Sdk.Extension.llvm20"],
-  "command": "fotema",
-  "finish-args": [
-    "--device=dri",
-    "--share=ipc",
-    "--share=network",
-    "--socket=wayland",
-    "--socket=fallback-x11",
-    "--socket=pulseaudio",
-    "--env=RUST_BACKTRACE=0",
-    "--env=RUST_LOG=fotema=info,fotema_core::thumbnailify=warn,relm4=warn,glycin=warn"
-  ],
-  "build-options": {
-    "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin",
-    "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
-  },
-  "cleanup": [
-    "/include",
-    "/lib/pkgconfig",
-    "/lib/cmake",
-    "/share/doc",
-    "/share/gtk-doc",
-    "/share/man",
-    "/share/pkgconfig",
-    "*.la",
-    "*.a"
-  ],
-  "cleanup-commands": ["mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"],
-  "add-extensions": {
-    "app.fotema.Fotema.HEIC": {
-      "directory": "lib/libheif-heic",
-      "add-ld-path": "lib",
-      "bundle": true,
-      "autodelete": true
+    "id": "app.fotema.Fotema",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "49",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable",
+        "org.freedesktop.Sdk.Extension.llvm21"
+    ],
+    "command": "fotema",
+    "finish-args": [
+        "--device=dri",
+        "--share=ipc",
+        "--share=network",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--socket=pulseaudio",
+        "--env=RUST_BACKTRACE=0",
+        "--env=RUST_LOG=fotema=info,fotema_core::thumbnailify=warn,relm4=warn,glycin=warn"
+    ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm21/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
     },
-    "org.freedesktop.Platform.ffmpeg-full": {
-      "version": "24.08",
-      "directory": "lib/ffmpeg",
-      "add-ld-path": "."
-    }
-  },
-
-  "modules": [
-    "modules/glycin-loaders.json",
-    "modules/libshumate.json",
-    "modules/opencv.json",
-    "modules/libonnxruntime.json",
-    {
-      "name": "fotema",
-      "buildsystem": "meson",
-      "builddir": true,
-      "run-tests": false,
-      "build-options": {
-        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib",
-        "env": {
-          "OPENCV_INCLUDE_PATHS": "/app/include/opencv4",
-          "LIBCLANG_PATH": "/usr/lib/sdk/llvm20/lib",
-          "ORT_STRATEGY": "system"
-        }
-      },
-      "config-opts": ["-Dprofile=default", "-Dsandboxed=true"],
-      "sources": [
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/lib/cmake",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "cleanup-commands": [
+        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
+    ],
+    "modules": [
+        "modules/libshumate.json",
+        "modules/opencv.json",
+        "modules/libonnxruntime.json",
         {
-          "type": "git",
-          "url": "https://github.com/blissd/fotema.git",
-          "tag": "v2.1.0",
-          "commit": "46a1311d3f123eb50922805ac8acb05e635863cc"
-        },
-        "cargo-sources.json"
-      ]
-    }
-  ]
+            "name": "fotema",
+            "buildsystem": "meson",
+            "builddir": true,
+            "run-tests": false,
+            "build-options": {
+                "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm21/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib",
+                "env": {
+                    "OPENCV_INCLUDE_PATHS": "/app/include/opencv4",
+                    "LIBCLANG_PATH": "/usr/lib/sdk/llvm21/lib",
+                    "ORT_STRATEGY": "system"
+                }
+            },
+            "config-opts": [
+                "-Dprofile=default",
+                "-Dsandboxed=true"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/blissd/fotema.git",
+                    "tag": "v2.2.0",
+                    "commit": "99aaa793a33273b8709a41bf73e4de4c38310ceb"
+                },
+                "cargo-sources.json"
+            ]
+        }
+    ]
 }
