@@ -21,4 +21,3 @@ export JUST_JUSTFILE=flatpak.justfile
 just build
 just run
 ```
-
