@@ -6,7 +6,7 @@
 default:
     just --list --justfile {{ justfile() }}
 
-# Locally test flatpak build for flathub
+# Locally test flatpak build for FlatHub.
 build:
     flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak run org.flatpak.Builder \
@@ -21,8 +21,14 @@ build:
         builddir \
         app.fotema.Fotema.json
 
+# Run locally built version of Fotema.
 run:
     flatpak run --branch=master app.fotema.Fotema
 
+# Delete the build artefact directories.
 clean:
     rm -rf .flatpak-builder builddir repo
+
+# Update cargo-sources.json
+release:
+    ./release.sh
