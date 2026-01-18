@@ -3,7 +3,10 @@
   "runtime": "org.gnome.Platform",
   "runtime-version": "49",
   "sdk": "org.gnome.Sdk",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable", "org.freedesktop.Sdk.Extension.llvm21"],
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.rust-stable", 
+    "org.freedesktop.Sdk.Extension.llvm21"
+  ],
   "command": "fotema",
   "finish-args": [
     "--device=dri",
@@ -30,7 +33,6 @@
     "*.la",
     "*.a"
   ],
-  "cleanup-commands": ["mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"],
   "modules": [
     "modules/libshumate.json",
     "modules/opencv.json",
@@ -49,7 +51,10 @@
           "ORT_STRATEGY": "system"
         }
       },
-      "config-opts": ["-Dprofile=default", "-Dsandboxed=true"],
+      "config-opts": [
+        "-Dprofile=default", 
+        "-Dsandboxed=true"
+      ],
       "sources": [
         {
           "type": "git",
