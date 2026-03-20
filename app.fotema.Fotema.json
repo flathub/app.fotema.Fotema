@@ -1,7 +1,7 @@
 {
   "id": "app.fotema.Fotema",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "49",
+  "runtime-version": "50",
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable",
@@ -59,8 +59,8 @@
         {
           "type": "git",
           "url": "https://github.com/blissd/fotema.git",
-          "tag": "v2.4.1",
-          "commit": "74160645a25d2cfe4ceb4f1935c247158ec3ab5f"
+          "tag": "v2.4.2",
+          "commit": "9210858ca1a833e2007291ddd62e0b0ed8c31e52"
         },
         "cargo-sources.json"
       ]
